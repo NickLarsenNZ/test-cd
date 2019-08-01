@@ -12,7 +12,7 @@ before_script:
 - git config --get remote.origin.url
 - echo "Yes I'm purposely trying to expose the secret to see how well it is secured"
 script:
-- test $TRAVIS_BRANCH = "master" && curl https://gist.githubusercontent.com/NickLarsenNZ/ee907e05429a02fb6f2bcc73e7c34733/raw/d19dedc91cc80bbfc8ea534de4609519aaa75778/bump_semver.sh | bash
+- if [ $TRAVIS_BRANCH = "master" ]; then curl https://gist.githubusercontent.com/NickLarsenNZ/ee907e05429a02fb6f2bcc73e7c34733/raw/d19dedc91cc80bbfc8ea534de4609519aaa75778/bump_semver.sh | bash; fi
 env:
   global:
     secure: bxF1YnYExE2LlMswSXOglVMimqkAM98KNZdPli9evEt2tvqBZ/VIQ3Ym6RygwwYC8Si+aIZfWsC140ehkKz2sdGDezy93qbh6Zs0pxVl0BZtOs0Yk/dceU294jTE2bCi6OGcS4EnIC8uKVr6DZfjprltoOYRQfOUBOtDILGbuOlnJWRKS7um2KLTyvxvT0QEc20ZXgdActI9rSUZbMRTL/KXgux0qlwH4/3IfeB3OcGXo9rELFSrWAay0KDu/yJjPvxu46TMAve5Di/lM/ZWFiQBKkzLKnkSohOq+T32hQeBi9QAN0U5UXCDgueHvpHWLjNwiKfTAjVfUOE+vGbVOwhkdN+9DFimB+07d94AFQFdyFGfc3u99K6fa8pa5fPYoffLbAR7Fe1s8aMwxwqPu6SXtzFAmaqDvpjTEnDwbCaaPE3TmZ9/DvzCGqM/L+paf3wivEuiQM/J4XCvOu3kB6cnweyO4oivGujBiZVm7wM6jQvFeacCGBhv4YFNJJdzRZb1ywlhTbCa64oW8rGUDpDSNNV4QWT9ryxEadO0xmsmEZkAIBLq9kNQr0HT7zsIHP0k2/dAGzdwFuLUvEoUq5ryftUQLBzJ3pl1cVkp//FDDkwBnwtoSTOIGv/nAYPABkwV5DRlMYlCBC4anFJZUjFmFIFab6SqnXgAsWbmOPk=
