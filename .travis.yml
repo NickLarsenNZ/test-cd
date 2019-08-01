@@ -1,5 +1,5 @@
 git:
-  depth: 1
+  depth: 20 # Just so we can look back to the last successful tag.
 matrix:
   include:
   - os: linux
