@@ -1,5 +1,5 @@
 git:
-  depth: 20 # Just so we can look back to the last successful tag.
+  depth: 200 # Just so we can look back to the last successful tag.
 matrix:
   include:
   - os: linux
@@ -11,6 +11,8 @@ before_script:
 - git remote set-url origin "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
 - git config --get remote.origin.url
 - echo "Yes I'm purposely trying to expose the secret to see how well it is secured"
+- git tag
+- git log
 script:
 - if [ $TRAVIS_BRANCH = "master" ]; then curl https://gist.githubusercontent.com/NickLarsenNZ/ee907e05429a02fb6f2bcc73e7c34733/raw/d19dedc91cc80bbfc8ea534de4609519aaa75778/bump_semver.sh | bash; fi
 env:
