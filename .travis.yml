@@ -8,7 +8,7 @@ before_script:
 - git config --get remote.origin.url
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "Travis CI"
-- git config --set remote.origin.url "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
+- git config set-url origin "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
 - git config --get remote.origin.url
 - echo "Yes I'm purposely trying to expose the secret to see how well it is secured"
 script:
