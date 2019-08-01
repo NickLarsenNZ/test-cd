@@ -9,4 +9,4 @@ before_script:
   - git clone https://github.com/markchalloner/git-semver.git && sudo git-semver/install.sh
 
 script:
-  - test $TRAVIS_BRANCH = "master" && curl https://gist.githubusercontent.com/NickLarsenNZ/ee907e05429a02fb6f2bcc73e7c34733/raw/ae367d7432074a706ffe47964319cff9c4c51779/bump_semver.sh | bash
+  - test $TRAVIS_BRANCH = "master" && curl https://gist.githubusercontent.com/NickLarsenNZ/ee907e05429a02fb6f2bcc73e7c34733/raw/d19dedc91cc80bbfc8ea534de4609519aaa75778/bump_semver.sh | bash
